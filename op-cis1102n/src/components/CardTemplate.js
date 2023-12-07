@@ -1,11 +1,12 @@
 import React from 'react'
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-
+import {
+    Box,
+    Card,
+    CardActions,
+    CardContent,
+    Button,
+    Typography
+} from '@mui/material';
 import { Outlet, useNavigate } from "react-router-dom";
 const CardTemplate = (props) => {
     let gotoLink = props.link;
@@ -13,7 +14,7 @@ const CardTemplate = (props) => {
 
     const toLink = () => {
         goto(gotoLink);
-      }
+    }
     return (
         <>
             <Box sx={{
@@ -31,7 +32,9 @@ const CardTemplate = (props) => {
                         </Typography>
                     </CardContent>
                     <CardActions sx={{ backgroundColor: '#f2f2f2' }}>
-                        {props.desc}
+                        <CardContent>
+                            {props.desc}
+                        </CardContent>
                         <Button variant="contained" disableElevation sx={{ color: 'black', bgcolor: '#f2f2f2', }} onClick={toLink}>{props.button}</Button>
                     </CardActions>
                 </Card>

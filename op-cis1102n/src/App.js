@@ -28,9 +28,6 @@ const navbar = {
   boxShadow: '1px 2px 5px #cccccc',
   bgcolor: '#71818E',
 };
-const footer = {
-  
-};
 const button = {
   fontSize: 17,
   p: '11px',
@@ -41,7 +38,7 @@ const button = {
 }
 function App() {
   return (
-    <div style={{textAlign: 'center' }}>
+    <div style={{textAlign: 'center', }}>
       <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -57,6 +54,7 @@ function App() {
           </Route>
         </Routes>
       </Router>
+      <Footer/>
     </div>
   );
 }
@@ -104,7 +102,7 @@ const Layout = () => {
   }
   return (
     <div>
-      <Box component="section" sx={navbar}>
+      <Box component="section" sx={navbar} id='#top'>
         <Button variant="contained" disableElevation sx={button} onClick={toHome}>Home</Button>
         <Button variant="contained" disableElevation sx={button} onClick={handleClick}>Blogs</Button>
         <Menu
@@ -121,12 +119,32 @@ const Layout = () => {
         </Menu>
         <Button variant="contained" disableElevation sx={button} onClick={toAbout}>About</Button>
       </Box>
-      <Box sx={footer}>
-        <p>links</p>
-      </Box>
       <Outlet />
     </div>
 
+  )
+};
+const Footer = () =>{
+  const footer={
+    position:"relative",
+    top:"310px",bottom:"0px", left:"0px",right:"0px",
+    bgcolor: "black",
+    color:"white",
+    p:'12px', m:'auto',
+    textAlign:'center', fontSize:"16px"
+  }
+  const anchors={
+    textDecoration:'none', color:'white', padding:'10px'
+  }
+  return(
+    <footer>
+      <Box component="section" sx={footer}>
+        <a style={anchors} href='#top'>Back to top</a>
+        <a style={anchors} href='/blogs'>Blogs</a>
+        <a style={anchors} href='/about'>About</a><br/>
+        <p>website made using<a style={anchors} href='https://mui.com/'>MUI library </a></p>
+      </Box>
+    </footer>
   )
 };
 export default App;
