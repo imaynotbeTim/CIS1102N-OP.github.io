@@ -31,6 +31,7 @@ const CardTemplate = (props) => {
                         </Typography>
                     </CardContent>
                     <CardActions sx={{ backgroundColor: '#f2f2f2' }}>
+                        {props.desc}
                         <Button variant="contained" disableElevation sx={{ color: 'black', bgcolor: '#f2f2f2', }} onClick={toLink}>{props.button}</Button>
                     </CardActions>
                 </Card>

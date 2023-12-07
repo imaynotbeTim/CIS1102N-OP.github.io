@@ -22,11 +22,14 @@ import NumberSystem from "./pages/blogs/NumberSystem"
 import ComputerComponentsAndOSs from "./pages/blogs/ComputerComponentsAndOSs"
 import './App.css'
 
-const box = {
+const navbar = {
   borderRadius: 3,
   border: '1px outset white',
   boxShadow: '1px 2px 5px #cccccc',
   bgcolor: '#71818E',
+};
+const footer = {
+  
 };
 const button = {
   fontSize: 17,
@@ -38,7 +41,7 @@ const button = {
 }
 function App() {
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{textAlign: 'center' }}>
       <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -101,7 +104,7 @@ const Layout = () => {
   }
   return (
     <div>
-      <Box component="section" sx={box}>
+      <Box component="section" sx={navbar}>
         <Button variant="contained" disableElevation sx={button} onClick={toHome}>Home</Button>
         <Button variant="contained" disableElevation sx={button} onClick={handleClick}>Blogs</Button>
         <Menu
@@ -117,6 +120,9 @@ const Layout = () => {
           <MenuItem onClick={toCCOS}>Computer Components & Operating Systems</MenuItem>
         </Menu>
         <Button variant="contained" disableElevation sx={button} onClick={toAbout}>About</Button>
+      </Box>
+      <Box sx={footer}>
+        <p>links</p>
       </Box>
       <Outlet />
     </div>
